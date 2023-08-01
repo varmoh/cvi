@@ -21,9 +21,8 @@ interface TranslatedLabel {
   [lang: string] : string;
 }
 
-
 const MainNavigation: FC<{items: MenuItem[]}> = ({items}) => {
-  
+
   const { t } = useTranslation();
   const [menuItems, setMenuItems] = useState<MenuItem[]>([]);
   const menuIcons = [
@@ -49,10 +48,8 @@ const MainNavigation: FC<{items: MenuItem[]}> = ({items}) => {
     },
   ];
 
-  
-
   const { data } = useQuery({
-    queryKey: ['cs-get-user-role', 'prod'],
+    queryKey: ['cs-get-user-role', 'prod', items[0]?.id],
     onSuccess: (res: any) => {
       const filteredItems = items.filter((item) => {
         const role = res.data.get_user[0].authorities[0]
@@ -71,7 +68,6 @@ const MainNavigation: FC<{items: MenuItem[]}> = ({items}) => {
 
   });
 
- 
   const location = useLocation();
   const [navCollapsed, setNavCollapsed] = useState(false);
 
