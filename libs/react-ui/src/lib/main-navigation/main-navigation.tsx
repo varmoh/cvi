@@ -7,7 +7,7 @@ import { useQuery } from '@tanstack/react-query';
 import clsx from 'clsx';
 import { MdOutlineForum, MdOutlineAdb, MdOutlineEqualizer, MdSettings, MdOutlineMonitorWeight } from 'react-icons/md';
 import { Icon } from 'components';
-import './MainNavigation.scss';
+import './main-navigation.scss';
 
 interface MenuItem {
   id?: string;
