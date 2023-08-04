@@ -1,6 +1,7 @@
-@import 'src/styles/tools/spacing';
-@import 'src/styles/tools/color';
-@import 'src/styles/settings/variables/typography';
+//Import loctions may need to be updated depending on project structure
+@import 'src/styles/scss/tools/spacing';
+@import 'src/styles/scss/tools/color';
+@import 'src/styles/scss/settings/variables/typography';
 
 .nav {
   $self: &;
@@ -15,8 +16,8 @@
   }
 
   li, a, .nav__toggle, .nav__menu-toggle {
-    font-size: $veera-font-size-80;
-    line-height: $veera-line-height-500;
+    font-size: 14px;
+    line-height: 1.5;
   }
 
   &__menu-toggle {
@@ -55,7 +56,7 @@
     }
 
     &.active {
-      font-weight: $veera-font-weight-delta;
+      font-weight: 700;
     }
 
     &:focus {
@@ -64,7 +65,7 @@
 
   &__toggle {
     &[aria-expanded=true] {
-      font-weight: $veera-font-weight-delta;
+      font-weight: 700;
 
       .icon {
         transform: rotate(180deg);

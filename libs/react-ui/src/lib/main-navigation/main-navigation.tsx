@@ -1,18 +1,15 @@
 import { FC, MouseEvent, useEffect, useState } from 'react';
-
 import { NavLink, useLocation } from 'react-router-dom';
 import { MdClose, MdKeyboardArrowDown } from 'react-icons/md';
-import { useTranslation } from 'react-i18next';
-import { useQuery } from '@tanstack/react-query';
 import clsx from 'clsx';
 import { MdOutlineForum, MdOutlineAdb, MdOutlineEqualizer, MdSettings, MdOutlineMonitorWeight } from 'react-icons/md';
-import { Icon } from 'components';
+import  IconComponent from '../icons/icon/icon.tsx';
 import './main-navigation.scss';
 
 interface MenuItem {
   id?: string;
   label: TranslatedLabel;
-  path: string | null;
+  path?: string;
   target?: '_blank' | '_self';
   children?: MenuItem[];
 }
@@ -23,8 +20,8 @@ interface TranslatedLabel {
 
 const MainNavigation: FC<{items: MenuItem[]}> = ({items}) => {
 
-  const { t } = useTranslation();
   const [menuItems, setMenuItems] = useState<MenuItem[]>([]);
+
   const menuIcons = [
     {
       id: 'conversations',
@@ -48,6 +45,10 @@ const MainNavigation: FC<{items: MenuItem[]}> = ({items}) => {
     },
   ];
 
+  /** For real application menu items are filtered by user role */
+  /** un-comment next part for filtering items by user role */
+
+  /****
   const { data } = useQuery({
     queryKey: ['cs-get-user-role', 'prod', items[0]?.id],
     onSuccess: (res: any) => {
@@ -65,8 +66,11 @@ const MainNavigation: FC<{items: MenuItem[]}> = ({items}) => {
       }) ?? []
       setMenuItems(filteredItems)
     }
-
   });
+  **/
+
+  /** Remove this hook when using items filtering functionality above*/
+  useEffect(() => {setMenuItems(items);}, []);
 
   const location = useLocation();
   const [navCollapsed, setNavCollapsed] = useState(false);
@@ -87,10 +91,10 @@ const MainNavigation: FC<{items: MenuItem[]}> = ({items}) => {
               onClick={handleNavToggle}
             >
               {menuItem.id && (
-                <Icon icon={menuIcons.find(icon => icon.id === menuItem.id)?.icon} />
+                <IconComponent icon={menuIcons.find(icon => icon.id === menuItem.id)?.icon} />
               )}
               <span>{menuItem.label['et']}</span>
-              <Icon icon={<MdKeyboardArrowDown />} />
+              <IconComponent icon={<MdKeyboardArrowDown />} />
             </button>
             <ul
               className='nav__submenu'>
@@ -106,11 +110,12 @@ const MainNavigation: FC<{items: MenuItem[]}> = ({items}) => {
 
   if (!menuItems) return null;
 
+  /** Use translations (button label 'Sulge') on dev/prod version */
   return (
     <nav className={clsx('nav', { 'nav--collapsed': navCollapsed })}>
       <button className='nav__menu-toggle' onClick={() => setNavCollapsed(!navCollapsed)}>
-        <Icon icon={<MdClose />} />
-        {t('mainMenu.closeMenu')}
+        <IconComponent icon={<MdClose />} />
+        Sulge
       </button>
       <ul className='nav__menu'>
         {renderMenuTree(menuItems)}
