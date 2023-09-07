@@ -1,0 +1,343 @@
+[
+  {
+    "id": "conversations",
+    "label": {
+      "et": "Vestlused",
+      "en": "Conversations"
+    },
+    "path": "/chat",
+    "children": [
+      {
+        "label": {
+          "et": "Vastamata",
+          "en": "Unanswered"
+        },
+        "path": "/chat/chat/unanswered"
+      },
+      {
+        "label": {
+          "et": "Aktiivsed",
+          "en": "Active"
+        },
+        "path": "/chat/chat/active"
+      },
+      {
+        "label": {
+          "et": "Ajalugu",
+          "en": "History"
+        },
+        "path": "/chat/chat/history"
+      }
+    ]
+  },
+  {
+    "id": "training",
+    "label": {
+      "et": "Treening",
+      "en": "Training"
+    },
+    "path": "/training",
+    "children": [
+      {
+        "label": {
+          "et": "Treening",
+          "en": "Training"
+        },
+        "path": "/training",
+        "children": [
+          {
+            "label": {
+              "et": "Teemad",
+              "en": "Themes"
+            },
+            "path": "/training/training/intents"
+          },
+          {
+            "label": {
+              "et": "Avalikud teemad",
+              "en": "Public themes"
+            },
+            "path": "/training/training/common-intents"
+          },
+          {
+            "label": {
+              "et": "Teemade järeltreenimine",
+              "en": "Post training themes"
+            },
+            "path": "/training/training/intents-followup-training"
+          },
+          {
+            "label": {
+              "et": "Vastused",
+              "en": "Answers"
+            },
+            "path": "/training/training/responses"
+          },
+          {
+            "label": {
+              "et": "Kasutuslood",
+              "en": "User Stories"
+            },
+            "path": "/training/training/stories"
+          },
+          {
+            "label": {
+              "et": "Konfiguratsioon",
+              "en": "Configuration"
+            },
+            "path": "/training/training/configuration"
+          },
+          {
+            "label": {
+              "et": "Vormid",
+              "en": "Forms"
+            },
+            "path": "/training/training/forms"
+          },
+          {
+            "label": {
+              "et": "Mälukohad",
+              "en": "Slots"
+            },
+            "path": "/training/training/slots"
+          }
+        ]
+      },
+      {
+        "label": {
+          "et": "Ajaloolised vestlused",
+          "en": "Historical conversations"
+        },
+        "path": "/training/history",
+        "children": [
+          {
+            "label": {
+              "et": "Ajalugu",
+              "en": "History"
+            },
+            "path": "/training/history/history"
+          },
+          {
+            "label": {
+              "et": "Pöördumised",
+              "en": "Appeals"
+            },
+            "path": "/training/history/appeal"
+          }
+        ]
+      },
+      {
+        "label": {
+          "et": "Mudelipank ja analüütika",
+          "en": "Modelbank and analytics"
+        },
+        "path": "/training/analytics",
+        "children": [
+          {
+            "label": {
+              "et": "Teemade ülevaade",
+              "en": "Overview of topics"
+            },
+            "path": "/training/analytics/overview"
+          },
+          {
+            "label": {
+              "et": "Mudelite võrdlus",
+              "en": "Comparison of models"
+            },
+            "path": "/training/analytics/models"
+          },
+          {
+            "label": {
+              "et": "Testlood",
+              "en": "testTracks"
+            },
+            "path": "/training/analytics/testcases"
+          }
+        ]
+      },
+      {
+        "label": {
+          "et": "Treeni uus mudel",
+          "en": "Train new model"
+        },
+        "path": "/training/train-new-model"
+      }
+    ]
+  },
+  {
+    "id": "analytics",
+    "label": {
+      "et": "Analüütika",
+      "en": "Analytics"
+    },
+    "path": "/analytics",
+    "children": [
+      {
+        "label": {
+          "et": "Ülevaade",
+          "en": "Overview"
+        },
+        "path": "/analytics/overview"
+      },
+      {
+        "label": {
+          "et": "Vestlused",
+          "en": "Chats"
+        },
+        "path": "/analytics/chats"
+      },
+      {
+        "label": {
+          "et": "Bürokratt",
+          "en": "Burokratt"
+        },
+        "path": "/analytics/burokratt"
+      },
+      {
+        "label": {
+          "et": "Tagasiside",
+          "en": "Feedback"
+        },
+        "path": "/analytics/feedback"
+      },
+      {
+        "label": {
+          "et": "Nõustajad",
+          "en": "Advisors"
+        },
+        "path": "/analytics/advisors"
+      },
+      {
+        "label": {
+          "et": "Avaandmed",
+          "en": "Reports"
+        },
+        "path": "/analytics/reports"
+      }
+    ]
+  },
+  {
+    "id": "services",
+    "label": {
+      "et": "Teenused",
+      "en": "Services"
+    },
+    "path": "/services",
+    "children": [
+      {
+        "label": {
+          "et": "Ülevaade",
+          "en": "Overview"
+        },
+        "path": "/services/overview"
+      },
+      {
+        "label": {
+          "et": "Uus teenus",
+          "en": "New Service"
+        },
+        "path": "/services/newService"
+      },
+      {
+        "label": {
+          "et": "Teemade järeltreenimine",
+          "en": "Followup Training"
+        },
+        "path": "/services/followupTraining"
+      },
+      {
+        "label": {
+          "et": "Probleemsed teenused",
+          "en": "Faulty Services"
+        },
+        "path": "/services/faultyServices"
+      }
+    ]
+  },
+  {
+    "id": "settings",
+    "label": {
+      "et": "Haldus",
+      "en": "Administration"
+    },
+    "path": "/settings",
+    "children": [
+      {
+        "label": {
+          "et": "Kasutajad",
+          "en": "Users"
+        },
+        "path": "/chat/settings/users"
+      },
+      {
+        "label": {
+          "et": "Vestlusbot",
+          "en": "Chatbot"
+        },
+        "path": "/chat/settings/chatbot",
+        "children": [
+          {
+            "label": {
+              "et": "Seaded",
+              "en": "Settings"
+            },
+            "path": "/chat/settings/chatbot/settings"
+          },
+          {
+            "label": {
+              "et": "Tervitussõnum",
+              "en": "Welcome message"
+            },
+            "path": "/chat/settings/chatbot/welcome-message"
+          },
+          {
+            "label": {
+              "et": "Välimus ja käitumine",
+              "en": "Appearance and behavior"
+            },
+            "path": "/chat/settings/chatbot/appearance"
+          },
+          {
+            "label": {
+              "et": "Erakorralised teated",
+              "en": "Emergency notices"
+            },
+            "path": "/chat/settings/chatbot/emergency-notices"
+          }
+        ]
+      },
+      {
+        "label": {
+          "et": "Asutuse tööaeg",
+          "en": "Office opening hours"
+        },
+        "path": "/chat/settings/working-time"
+      },
+      {
+        "label": {
+          "et": "Sessiooni pikkus",
+          "en": "Session length"
+        },
+        "path": "/chat/settings/session-length"
+      }
+    ]
+  },
+  {
+    "id": "monitoring",
+    "label": {
+      "et": "Seire",
+      "en": "Monitoring"
+    },
+    "path": "/monitoring",
+    "children": [
+      {
+        "label": {
+          "et": "Aktiivaeg",
+          "en": "Working hours"
+        },
+        "path": "/chat/monitoring/uptime"
+      }
+    ]
+  }
+]

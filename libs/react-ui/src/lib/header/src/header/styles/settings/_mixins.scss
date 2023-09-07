@@ -1,0 +1,33 @@
+@mixin cvi-screenreader-text {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  /* stylelint-disable-next-line declaration-property-value-allowed-list */
+  margin: -1px;
+  padding: 0;
+  border: none;
+  white-space: nowrap;
+}
+
+@mixin cvi-breakpoint-down($breakpoint) {
+  @media (max-width: #{map-get($cvi-grid-breakpoints, $breakpoint)}) {
+    @content;
+  }
+}
+
+@mixin cvi-breakpoint-up($breakpoint) {
+  @media (min-width: #{map-get($cvi-grid-breakpoints, $breakpoint) + 1px}) {
+    @content;
+  }
+}
+
+@mixin cvi-truncate-single-line($chars: 25ch) {
+  max-width: $chars;
+  white-space: nowrap;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: top;
+}

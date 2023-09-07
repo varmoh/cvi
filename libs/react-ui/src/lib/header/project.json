@@ -1,0 +1,52 @@
+{
+  "name": "header",
+  "sourceRoot": "header/src",
+  "projectType": "library",
+  "tags": ["scope:header"],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["header/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "build": {
+      "executor": "@nrwl/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "project": "./ng-package.json",
+        "outputPath": "dist/header"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "./tsconfig.lib.prod.json",
+          "mode": "production"
+        },
+        "development": {
+          "tsConfig": "./tsconfig.lib.json",
+          "mode": "development"
+        }
+      }
+    },
+    "test": {
+      "executor": "@nrwl/vite:test",
+      "outputs": ["{projectRoot}/coverage"],
+      "options": {
+        "passWithNoTests": true
+      }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "preset": "angular",
+        "baseBranch": "main",
+        "push": true,
+        "noVerify": true,
+        "commitMessageFormat": "chore(${projectName}): release version ${version} [skip ci]",
+        "skipCommitTypes": ["chore", "ci", "docs", "style", "test", "format"]
+      }
+    }
+  }
+}

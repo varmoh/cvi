@@ -1,0 +1,45 @@
+/* stylelint-disable no-duplicate-selectors */
+
+// Border radii
+$cvi-radii: (
+  xs: 2px,
+  s: 4px,
+  m: 6px,
+  l: 8px,
+  pill: 999px,
+);
+
+:root {
+  @each $name, $size in $cvi-radii {
+    --cvi-radius-#{'' + $name}: #{$size};
+  }
+}
+
+
+// Border widths
+:root {
+  --cvi-border-width: 2px;
+}
+
+
+// Shadows
+$cvi-shadow-beta-blur: 15px;
+
+:root {
+  --cvi-shadow-beta-blur: #{$cvi-shadow-beta-blur};
+
+  --cvi-shadow-alpha: 0 1px 5px 0 rgba(var(--cvi-color-rgb-black) / 0.15);
+  --cvi-shadow-beta: 0 4px var(--cvi-shadow-beta-blur) 0 rgba(var(--cvi-color-rgb-black) / 0.15);
+  --cvi-shadow-gamma: 0 0 20px 0 rgba(var(--cvi-color-rgb-sapphire-blue-16) / 0.1);
+  --cvi-shadow-delta: inset 1px 0 0 var(--cvi-color-white),
+    inset -1px 0 0 var(--cvi-color-white), inset 0 1px 0 var(--cvi-color-white),
+    inset 0 -1px 0 var(--cvi-color-white);
+}
+
+
+// Focus styles
+:root {
+  --cvi-border-focus: var(--cvi-border-width) solid var(--cvi-color-focus);
+  --cvi-shadow-focus: var(--cvi-shadow-delta);
+}
+/* stylelint-enable no-duplicate-selectors */
